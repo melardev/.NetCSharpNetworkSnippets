@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34ACB8FD-FD50-45B9-8582-0F8CC4FAC094}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NetworkSnippets</RootNamespace>
+    <AssemblyName>NetworkSnippets</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auxiliary\AnyAddress.cs" />
+    <Compile Include="Auxiliary\DnsGetHostEntryUsage.cs" />
+    <Compile Include="Auxiliary\DnsResolveUsage.cs" />
+    <Compile Include="Auxiliary\GetAllNetworkInterfaces.cs" />
+    <Compile Include="Auxiliary\GetPcIpProperties.cs" />
+    <Compile Include="Auxiliary\NetAvailabilityChanged.cs" />
+    <Compile Include="Http\not_ready\PostFile.cs" />
+    <Compile Include="Auxiliary\GetPcIpAddresses.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sockets\Tcp\Async\BasicBroadcaster\Client.cs" />
+    <Compile Include="Sockets\Tcp\Async\BasicBroadcaster\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Async\BasicBroadcaster\Server.cs" />
+    <Compile Include="Sockets\Tcp\Async\BasicEcho\Client.cs" />
+    <Compile Include="Sockets\Tcp\Async\BasicEcho\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Async\BasicEcho\Server.cs" />
+    <Compile Include="Sockets\Tcp\Async\BinarySerialization\Client.cs" />
+    <Compile Include="Sockets\Tcp\Async\BinarySerialization\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Async\BinarySerialization\Notification.cs" />
+    <Compile Include="Sockets\Tcp\Async\BinarySerialization\Server.cs" />
+    <Compile Include="Sockets\Tcp\Async\Basic\Client.cs" />
+    <Compile Include="Sockets\Tcp\Async\Basic\Server.cs" />
+    <Compile Include="Sockets\Tcp\Async\Basic\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Sync\Clients\EchoSocketClient.cs" />
+    <Compile Include="Sockets\Tcp\Sync\Clients\EchoSocketClientThread.cs" />
+    <Compile Include="Sockets\Tcp\Sync\Clients\EchoStreamReaderWriterClient.cs" />
+    <Compile Include="Sockets\Tcp\Sync\Clients\EchoStreamReaderWriterClientThread.cs" />
+    <Compile Include="Sockets\Tcp\Sync\Clients\EchoTcpClient.cs" />
+    <Compile Include="Sockets\Tcp\Sync\Clients\EchoTcpClientThread.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\SerializationBytes\Client.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\SerializationBytes\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\SerializationBytes\Message.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\SerializationBytes\Server.cs" />
+    <Compile Include="Sockets\Tcp\Sync\Servers\EchoServerThread.cs" />
+    <Compile Include="Sockets\Tcp\Sync\Servers\EchoServerThreadPool.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\BinSerialization\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\BinSerialization\Message.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\BinSerialization\Client.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\BinSerialization\Server.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\NetworkStreamUsage\Client.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\NetworkStreamUsage\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\NetworkStreamUsage\Server.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\SocketUsage\Client.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\SocketUsage\Server.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\SocketUsage\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\StreamReaderWriter\Client.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\StreamReaderWriter\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\StreamReaderWriter\Server.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\TcpObjectsUsage\Client.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\TcpObjectsUsage\Launcher.cs" />
+    <Compile Include="Sockets\Tcp\Sync\SingleInteraction\TcpObjectsUsage\Server.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Auxiliary\not_ready\" />
+    <Folder Include="not_ready\" />
+    <Folder Include="Sockets\not_ready\" />
+    <Folder Include="Sockets\Tcp\Async\SingleInteraction\Basic\" />
+    <Folder Include="Sockets\Tcp\not_ready\" />
+    <Folder Include="Sockets\Tcp\Sync\Clients\not_ready\" />
+    <Folder Include="Sockets\Tcp\Sync\not_ready\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
